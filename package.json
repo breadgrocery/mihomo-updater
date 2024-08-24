@@ -1,0 +1,40 @@
+{
+  "name": "@mihomo-updater/monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Updater for mihomo",
+  "license": "MIT",
+  "author": "Bread Grocery<https://github.com/breadgrocery>",
+  "scripts": {
+    "prepare": "husky",
+    "preinstall": "npx only-allow pnpm",
+    "build": "pnpm run -C packages/mihomo-updater build",
+    "dev": "pnpm run -C packages/playground dev",
+    "publish-prepare": "npx prettier --write --ignore-path none **/dist/** && pnpm changeset",
+    "publish": "pnpm changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.7",
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/node": "22.4.2",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
+    "eslint": "8.57.0",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.8",
+    "prettier": "^3.3.3",
+    "typescript": "5.5.4",
+    "unbuild": "^2.0.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}": "npx eslint .",
+    "*.*": "npx prettier --write ."
+  }
+}
