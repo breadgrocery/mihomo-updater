@@ -5,4 +5,4 @@ export const releases = "https://github.com/MetaCubeX/mihomo/releases";
 
 export const modulePath = fileURLToPath(import.meta.url);
 
-export const tempDir = join(modulePath, "../../.mihomo-updater");
+export const tempDir = join(modulePath, "../../../.mihomo-updater");

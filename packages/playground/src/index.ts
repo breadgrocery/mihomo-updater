@@ -16,4 +16,5 @@ console.log(stableTarget);
 const alphaTarget = getTarget(platform, arch, alpha, true);
 console.log(alphaTarget);
 
-stableTarget.saveTo("D:/桌面/abc");
+const mirror = "https://mirror.ghproxy.com";
+stableTarget.saveTo("C:/mihomo-updater", target => `${mirror}/${target.url}`);
