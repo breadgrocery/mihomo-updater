@@ -1,15 +1,17 @@
 import ProgressBar from "progress";
 
 export interface Options {
+  title?: string;
   total: number;
   width?: number;
 }
 export const createProgressBar = (options: Options) => {
-  const { total, width = 50 } = options;
-  return new ProgressBar("Downloading [:bar] :percent :etas", {
+  const { title = "Processing", total, width = 50 } = options;
+  return new ProgressBar(`${title} [:bar] :rate/bps :percent :etas`, {
     total,
     width,
     complete: "=",
-    incomplete: " "
+    incomplete: " ",
+    clear: false
   });
 };

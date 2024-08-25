@@ -1,4 +1,4 @@
-import { getLatestVersion, getTarget } from "mihomo-updater";
+import { getGeo, getLatestVersion, getTarget } from "mihomo-updater";
 import { arch, platform } from "node:process";
 
 const stable = await getLatestVersion(false);
@@ -18,3 +18,15 @@ console.log(alphaTarget);
 
 const mirror = "https://mirror.ghproxy.com";
 stableTarget.saveTo("C:/mihomo-updater", target => `${mirror}/${target.url}`);
+
+const geoip = getGeo("geoip");
+geoip.saveTo("C:/mihomo-updater", target => `${mirror}/${target.url}`);
+
+const geosite = getGeo("geosite");
+geosite.saveTo("C:/mihomo-updater", target => `${mirror}/${target.url}`);
+
+const mmdb = getGeo("mmdb");
+mmdb.saveTo("C:/mihomo-updater", target => `${mirror}/${target.url}`);
+
+const asn = getGeo("asn");
+asn.saveTo("C:/mihomo-updater", target => `${mirror}/${target.url}`);

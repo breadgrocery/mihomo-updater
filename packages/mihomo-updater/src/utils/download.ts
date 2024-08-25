@@ -15,6 +15,7 @@ export const download = async (url: string, path: string) => {
         mkdirSync(dirname(path), { recursive: true });
         if (response.body) {
           const progress = createProgressBar({
+            title: "Downloading",
             total: Number(response.headers.get("Content-Length")) || 0
           });
           response.body.on("data", chunk => progress.tick(chunk.length));
