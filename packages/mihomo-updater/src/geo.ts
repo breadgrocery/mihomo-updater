@@ -2,7 +2,7 @@ import { renameSync } from "node:fs";
 import { join } from "node:path";
 import { GeoX } from "./mapping/geos";
 import geos from "./mapping/geos";
-import { download } from "./utils/download";
+import { download } from "./utils";
 
 export interface Geo {
   url: string;

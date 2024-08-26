@@ -1,12 +1,12 @@
 import { gzip, tar, tgz, zip } from "compressing";
 
-export interface Options {
+export interface ZipOptions {
   source: string;
   format: string;
   dest: string;
 }
 
-export const unzip = ({ source, format, dest }: Options) => {
+export const unzip = ({ source, format, dest }: ZipOptions) => {
   const promise = (() => {
     format = format.startsWith(".") ? format.substring(format.indexOf(".") + 1) : format;
     switch (format) {

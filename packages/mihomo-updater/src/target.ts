@@ -4,8 +4,7 @@ import process from "node:process";
 import { releases, tempDir } from "./constants";
 import extensions from "./mapping/extension";
 import targets from "./mapping/target";
-import { download } from "./utils/download";
-import { unzip } from "./utils/unzipper";
+import { download, unzip } from "./utils";
 
 // Stable version releases
 const stableReleases = `${releases}/download`;

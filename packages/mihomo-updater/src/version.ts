@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 import process from "node:process";
 import { releases } from "./constants";
-import { proxyAgent } from "./utils/proxy";
+import { proxyAgent } from "./utils";
 
 // Stable version URL
 const stableVersionUrl = `${releases}/latest/download/version.txt`;
