@@ -43,7 +43,7 @@ export const getTarget = (
 
   const name = targets[platform]?.[arch];
 
-  const zipExt = extensions[platform].zip;
+  const zipExt = extensions[platform].archive;
   const stableUrl = `${stableReleases}/${version}/${name}-${version}${zipExt}`;
   const alphaUrl = `${alphaReleases}/${name}-${version}${zipExt}`;
   const url = alpha ? alphaUrl : stableUrl;
@@ -70,7 +70,7 @@ export const getTarget = (
 
         // Unzip the downloaded file
         console.log(`Unzipping file: ${downloaded} to ${dest}`);
-        await unzip({ source: downloaded, format: zipExt, dest });
+        await unzip({ source: downloaded, ext: zipExt, dest });
         console.log(`Unzip completed for file: ${downloaded} to ${dest}`);
 
         // Rename the file
