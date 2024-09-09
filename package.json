@@ -1,6 +1,6 @@
 {
   "name": "@mihomo-updater/monorepo",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "private": true,
   "description": "Updater for mihomo",
   "license": "MIT",
