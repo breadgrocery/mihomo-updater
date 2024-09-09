@@ -1,6 +1,6 @@
 {
   "name": "mihomo-updater",
-  "version": "0.0.7",
+  "version": "0.0.12",
   "description": "Updater for mihomo",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",

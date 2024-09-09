@@ -1,4 +1,4 @@
-import { renameSync } from "node:fs";
+import { existsSync, renameSync } from "node:fs";
 import { join } from "node:path";
 import process from "node:process";
 import { releases, tempDir } from "./constants";
@@ -78,7 +78,15 @@ export const getTarget = (
           return `mihomo${target.alpha ? "-alpha" : ""}${target.binaryExt}`;
         };
         const newName = (rename || defaultRename)(target);
-        renameSync(join(dest, binaryName), join(dest, newName));
+        if (binaryName !== newName && newName) {
+          const oldPath = join(dest, binaryName);
+          const newPath = join(dest, newName);
+          if (existsSync(oldPath)) {
+            renameSync(oldPath, newPath);
+          } else {
+            throw new Error(`no such file: ${oldPath}`);
+          }
+        }
       } catch (error) {
         console.error(`Error processing target: ${error}`);
         throw error;
