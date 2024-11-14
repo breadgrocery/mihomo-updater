@@ -1,14 +1,14 @@
 {
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    ".gitignore": ".git*,lefthook.*,eslint.config.*,prettier.config.*,.prettierignore,LICENSE",
+    "README.md": "README.*.md",
+    "privacy.md": "privacy.*.md",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json,yarn.lock,pnpm-lock.yaml,bun.lockb"
   },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "yaml.schemas": {
-    "https://json.schemastore.org/prettierrc": ".prettierrc.yaml"
+  "search.exclude": {
+    "dist": true
   }
 }
